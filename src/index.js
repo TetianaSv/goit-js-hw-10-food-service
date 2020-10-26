@@ -1,6 +1,6 @@
 import './styles.css';
-import menuItemTpl from './templates/menu-item.hbs';
-import menu from "./menu.json"
+import menuTpl from './templates/menu-item.hbs';
+import menuItems from "./menu.json"
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -14,7 +14,7 @@ const refs = {
 };
 
 
-refs.menuList.innerHTML = menu.map(menuItemTpl).join('');
+refs.menuList.innerHTML = menuItems.map(menuTpl).join('');
 if (JSON.parse(localStorage.getItem('checked-dark-theme'))) {
   refs.body.classList.remove(`${Theme.LIGHT}`);
   refs.body.classList.add(`${Theme.DARK}`);
